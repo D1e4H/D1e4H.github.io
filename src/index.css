@@ -1,0 +1,21 @@
+@import "tailwindcss";
+body{
+    overflow-x: hidden;
+}
+@font-face{
+    font-family: 'Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Grotesk-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Pixel';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@theme {
+    --font-pixel: "Press Start 2P", cursive;
+    --font-grotesk: 'Grotesk', sans-serif;
+}
