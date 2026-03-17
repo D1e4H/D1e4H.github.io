@@ -1,7 +1,18 @@
 @import "tailwindcss";
+
 body{
     overflow-x: hidden;
+    background-color: #000000;
 }
+@font-face {
+  font-family: 'Script';
+  src: url('./fonts/ImperialScript-Regular.woff2') format('woff2'),
+       url('./fonts/ImperialScript-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
 @font-face{
     font-family: 'Grotesk';
     font-style: normal;
@@ -18,4 +29,5 @@ body{
 @theme {
     --font-pixel: "Press Start 2P", cursive;
     --font-grotesk: 'Grotesk', sans-serif;
+    --font-script: "Script", cursive; 
 }

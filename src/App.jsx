@@ -13,48 +13,10 @@ import htmlLogo from './assets/svg/html8bit.png'
 import goAlone from './assets/gifs/Go-alone.png'
 import PixelCube from '../components/Cube.jsx'
 import ProjectParticles from '../components/project-particles.jsx'
+import BackgroundGrid from '../components/BackgroundGrid.jsx';
+import DevRandomAnimation from '../components/DevAnimation.jsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-
-const GlassCube = () => {
-  const meshRef = useRef();
-  useGSAP(() => {
-    gsap.to(meshRef.current.rotation, {
-      y: Math.PI * 2,
-      x: Math.PI,
-      duration: 10,
-      repeat: -1,
-      ease: "none"
-    })
-
-  }, { scope: meshRef })
-  return (
-    <mesh ref={meshRef} >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshPhysicalMaterial
-        color={0x000000}
-        metalness={0}
-        roughness={0.05}
-        transmission={1}
-        thickness={0.5}
-        ior={1.5}
-        reflectivity={0.5}
-        transparent={true}
-        opacity={1}>
-
-
-      </meshPhysicalMaterial>
-    </mesh>
-  )
-};
-
-
-
-
-
-
-
 
 const App = () => {
   const logoRef = useRef(null);
@@ -101,7 +63,7 @@ const App = () => {
     pacmanAnimation.to('#pacman', {
 
     })
-      .call(() => setColor(false))
+      .call(() => setColor(true))
       .to('#pacman', {
         y: 573,
         duration: 2,
@@ -191,7 +153,7 @@ const App = () => {
     <>
 
       <div className="  min-h-screen max-w-screen flex items-center justify-center flex-col">
-        <section className=" max-w-300 min-h-135 flex flex-col justify-center items-center ">
+        <section className=" relative  bg-stone-950 max-w-400 min-w-400 h-[135] flex flex-col justify-center items-center ">
           <div className='absolute inset-0 z-0'>
             <Canvas camera={{ alpha: true, antialias: true, position: [0, 0, 4.3], fov: 45 }}>
               <ProjectParticles />
@@ -200,42 +162,37 @@ const App = () => {
 
           <img id="pacman" className='w-30 h-30 mr-280 rotate-90 z-1' src={color ? "./src/assets/gifs/Pacman-blanco-portfolio-grande.gif" : "./src/assets/gifs/Pacman-negro-portfolio-grande.gif"}></img>
 
-          <div className="bg-none border-8 border-stone-950 w-11/12 h-130 flex flex-col justify-center items-center min-w-300 max-w-300">
+          <div className="bg-none  border-none min-h-100 flex flex-col justify-center items-center mb-30 ">
 
             <header className="fixed top-3 left-3 bg-l p-4 bg-stone-950 border-4">
               <h1 className=' font-pixel text-xs text-purple-500  w-full leading-tight'>PORTFOLIO <br></br>DE<br></br> DIEGO <br></br> HENRIQUEZ</h1>
             </header>
-            <div className="text-stone-950 -ml-120 mb-5 flex-row flex justify-center items-center">
-              <div className='font-pixel'>
-                <span className=' font-pixel text-7xl'>&lt;W</span><span className="font-pixel text-7xl">E</span><span className="font-pixel text-7xl">B</span>
+
+            <div className="text-purple-500 font-pixel flex flex-row justify-center items-center -mt-10 -mr-30">
+              <div className='font-pixel overflow-hidden'>
+                <DevRandomAnimation></DevRandomAnimation>
               </div>
-              <div className=" flex flex-row"><h2 className='text-4xl font-grotesk weight text-stone-900'>FrontEnd</h2></div>
-            </div>
-            <div className="text-stone-950 font-pixel flex flex-row justify-center items-center -mt-10 -mr-30">
-              <span className='font-pixel text-7xl'>D</span><span className="font-pixel text-7xl">E</span><span className="font-pixel text-7xl">V</span><span className="font-pixel text-7xl">E</span><span className="font-pixel text-7xl">L</span><span className="font-pixel text-7xl">O</span><span className="font-pixel text-7xl">P</span><span className="font-pixel text-7xl">E</span><span className="font-pixel text-7xl">R/&gt;</span>
-              <div className='w-45 h-45 bg-purple-500 -mt-20 '>
+              <div className='w-45 h-45 bg-none -mt-10 ml-20 '>
                 <Canvas camera={{ alpha: true, antialias: true, position: [0, 0, 4.3], fov: 45 }}>
-
-
-
-
-
                   <PixelCube />
-
                   <OrbitControls
                     enableZoom={false}
                   />
                 </Canvas>
-
               </div>
 
             </div>
           </div>
 
         </section>
-        <section className="  w-screen h-200 bg-stone-950 flex align items-center justify-center">
+        <section className=" relative w-screen h-230 bg-stone-950 flex align items-center justify-center">
+          <div className='w-full h-full absolute z-1'>
+            <Canvas className="w-full h-full m" camera={{ alpha: true, antialias: true, position: [0, 0, 10], fov: 45 }}>
+              <BackgroundGrid />
+            </Canvas>
+          </div>
           <div className="  min-h-120 max-w-300 flex items-center justify-center mx-auto flex-col">
-            <div className="  font-pixel text-purple-500 text-5xl mb-70 flex flex-col justify-center items-left h-full ml-5 max-w-300 mx-auto">
+            <div className="  font-pixel text-purple-500 text-5xl  flex flex-col justify-center items-left h-full ml-5 max-w-300 mx-auto">
 
               <h2 className="-mt-110 absolute ml-15">PROYECTOS</h2>  <pixel-canvas className="w-140 h-50 relative mr-110"> </pixel-canvas>
               <div className='flex flex-row'>
