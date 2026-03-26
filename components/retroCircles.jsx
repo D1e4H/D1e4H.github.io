@@ -4,7 +4,8 @@ import LinkedInIcon from '../src/assets/svg/linkedin.svg';
 import GmailIcon from '../src/assets/svg/gmail.svg';
 
 
-const RetroCircles = (icon) => {
+const RetroCircles = (t) => {
+    console.log(t);
     const circleData = [
         { id: '01', title: 'LINKEDIN', icon: <img src={LinkedInIcon} alt="LinkedIn" className='h-5 w-5' />, color: 'border-purple-500', link: 'https://www.linkedin.com/in/diego-henriquezar/' },
         { id: '02', title: 'GITHUB', icon: <img src={GitHubIcon} alt="GitHub" className='h-5 w-5' />, color: 'border-blue-500', link: 'https://github.com/D1e4H' },
@@ -36,28 +37,30 @@ const RetroCircles = (icon) => {
                     </a>
                 ))}
             </div>
-            <div className='w-screen flex align-center justify-center items-center relative'>
-                <button className="group  px-8 py-3 bg-stone-950 border-2 border-stone-700 hover:border-purple-400 transition-all duration-300 hover:-translate-y-1 active:translate-y-0.5">
+            <a alt="Download CV" href="../public/DiegoHenriquezCV.pdf" target="_blank" rel="noopener noreferrer">
+                <div className='w-screen flex align-center justify-center items-center relative'>
+                    <button className="group cursor-pointer px-8 py-3 bg-stone-950 border-2 border-stone-700 hover:border-purple-400 transition-all duration-300 hover:-translate-y-1 active:translate-y-0.5">
 
-                
-                    <div className="flex items-center gap-3">
-                        <span className="font-pixel text-[10px] tracking-widest text-stone-400 group-hover:text-white transition-colors">
-                            DOWNLOAD CV
-                        </span>
 
-                        <svg
-                            className="w-4 h-4 text-purple-500 group-hover:animate-bounce"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
-                    </div>
+                        <div className="flex items-center gap-3">
+                            <span className="font-pixel text-[10px] tracking-widest text-stone-400 group-hover:text-white transition-colors">
+                                <h2>{t.t.donwload}</h2>
+                            </span>
 
-                    <div className="inset-0 z-[-1] bg-purple-500/0 group-hover:bg-purple-500/10 blur-xl transition-all duration-500"></div>
-                </button>
-            </div>
+                            <svg
+                                className="w-4 h-4 text-purple-500 group-hover:animate-bounce"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </div>
+
+                        <div className="inset-0 z-[-1] bg-purple-500/0 group-hover:bg-purple-500/10 blur-xl transition-all duration-500"></div>
+                    </button>
+                </div>
+            </a>
         </>
     );
 };

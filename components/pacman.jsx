@@ -20,7 +20,7 @@ const Pacman = () => {
 
     }, []);
     return (
-        <img id="pacman" className='w-40 h-40 mr-280 rotate-90 z-1' src="./src/assets/gifs/Pacman-blanco-portfolio-grande.gif"></img>
+        <img id="pacman" className='w-40 h-40 mr-280 rotate-90 z-1' src="../src/assets/gifs/Pacman-blanco-portfolio-grande.gif"></img>
     )
 
 
