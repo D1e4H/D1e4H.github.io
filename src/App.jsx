@@ -3,23 +3,23 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
-import pacmanimg from './assets/gifs/pacmanimg.png'
+import pacmanimg from './assets/gifs/pacmanimg.png';
 import draggableImg from './assets/gifs/Draggable.jpg';
-import tailwindLogo from './assets/svg/tailwind-css-icon.png'
-import reactLogo from './assets/svg/react-icon.png'
-import javaScriptLogo from './assets/svg/jslogo8bit.png'
-import cssLogo from './assets/svg/css3-icon.svg'
-import htmlLogo from './assets/svg/html8bit.png'
-import PixelCube from '../components/Cube.jsx'
-import ProjectParticles from '../components/project-particles.jsx'
+import tailwindLogo from './assets/svg/tailwind-css-icon.png';
+import reactLogo from './assets/svg/react-icon.png';
+import javaScriptLogo from './assets/svg/jslogo8bit.png';
+import cssLogo from './assets/svg/css3-icon.svg';
+import htmlLogo from './assets/svg/html8bit.png';
+import PixelCube from '../components/Cube.jsx';
+import ProjectParticles from '../components/project-particles.jsx';
 import DevRandomAnimation from '../components/DevAnimation.jsx';
 import GitHubIcon from './assets/svg/github.jsx'
 import RetroCircles from '../components/retroCircles.jsx';
 import Pacman from '../components/pacman.jsx';
-import BackgroundGrid from '../components/backgroundGrid.jsx';
+import BackgroundGrid from '../components/BackgroundGrid.jsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
